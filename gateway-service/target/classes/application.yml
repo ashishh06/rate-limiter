@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+ratelimiter:
+  default-tier: free
+  tiers:
+    free:
+      capacity: 5
+      refill-tokens: 5
+      refill-period: 1s
+    paid:
+      capacity: 100
+      refill-tokens: 100
+      refill-period: 1s
+  # Explicit client-id -> tier overrides. Client id is "key:<X-API-Key value>"
+  # if that header is sent, otherwise "ip:<remote address>".
+  client-tiers:
+    "key:demo-paid-key": paid

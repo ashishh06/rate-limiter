@@ -1,0 +1,31 @@
+{
+  "groups": [
+    {
+      "name": "ratelimiter",
+      "type": "com.ratelimiter.gateway.RateLimiterProperties",
+      "sourceType": "com.ratelimiter.gateway.RateLimiterProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "ratelimiter.client-tiers",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "Explicit client-id -> tier-name overrides, e.g. a specific paid customer's API key.",
+      "sourceType": "com.ratelimiter.gateway.RateLimiterProperties"
+    },
+    {
+      "name": "ratelimiter.default-tier",
+      "type": "java.lang.String",
+      "description": "Tier applied to clients not found in {@link #clientTiers}.",
+      "sourceType": "com.ratelimiter.gateway.RateLimiterProperties",
+      "defaultValue": "free"
+    },
+    {
+      "name": "ratelimiter.tiers",
+      "type": "java.util.Map<java.lang.String,com.ratelimiter.gateway.RateLimiterProperties$Tier>",
+      "description": "Tier name -> bucket shape for that tier.",
+      "sourceType": "com.ratelimiter.gateway.RateLimiterProperties"
+    }
+  ],
+  "hints": []
+}
